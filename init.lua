@@ -125,8 +125,14 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+--[[
+--  CUSTOM KEYMAPS
+--]]
 -- Setting shortcut for opening the integrated terminal
-vim.keymap.set('n', '<C-t>', '<cmd>terminal<CR>')
+vim.keymap.set('n', '<leader>t', '<cmd>terminal<CR>')
+
+-- Setting a shortcut to open file explorer using Telescope.nvim
+vim.keymap.set('n', '<C-b>', '<cmd>lua require("telescope.builtin").find_files({hidden=true, layout_config={prompt_position="top"}})<CR>')
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
